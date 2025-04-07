@@ -35,8 +35,10 @@ function FeedbackForm() {
   }
 
   return (
-    <form className="w-full space-y-4" onSubmit={handleFormSubmission}>
-      <h1 className="text-3xl font-bold"> Create your account</h1>
+    <form
+      className="max-w-sm sm:max-w-md mx-auto p-8 shadow-2xl space-y-4"
+      onSubmit={handleFormSubmission}
+    >
       <div>
         <label htmlFor="fullname" className="label">
           Full name
@@ -71,9 +73,10 @@ function FeedbackForm() {
 
       <div>
         <label htmlFor="message" className="label">
-          Password
+          Message
         </label>
-        <input
+        <textarea
+          rows={3}
           type="text"
           placeholder="Enter your message"
           id="message"
@@ -89,7 +92,7 @@ function FeedbackForm() {
         {isLoading ? (
           <FaSpinner size={24} fill="white" className="animate-spin mx-auto" />
         ) : (
-          "Create account"
+          "Submit"
         )}
       </button>
     </form>
