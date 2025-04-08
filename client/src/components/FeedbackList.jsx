@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "../lib/axios";
 import { FaSpinner } from "react-icons/fa6";
+import FeedbackCard from "./FeedbackCard";
 
 function FeedbackList() {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -26,13 +27,9 @@ function FeedbackList() {
   if (isLoading) return <FaSpinner />;
 
   return (
-    <div className="grid gap-4 mt-6 w-full max-w-3xl">
-      {feedbacks.map((feedback) => (
-        <div key={feedback._id} className="bg-white p-4 shadow rounded">
-          <h3 className="text-lg font-semibold">{feedback.fullName}</h3>
-          <p className="text-sm text-gray-600">{feedback.email}</p>
-          <p className="mt-2">{feedback.message}</p>
-        </div>
+    <div className="mt-6 w-full max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {feedbacks.map((item) => (
+        <FeedbackCard key={item._id} item={item} />
       ))}
     </div>
   );

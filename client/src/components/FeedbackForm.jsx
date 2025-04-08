@@ -36,7 +36,7 @@ function FeedbackForm() {
 
   return (
     <form
-      className="max-w-sm sm:max-w-md mx-auto p-8 shadow-2xl space-y-4"
+      className="max-w-sm sm:max-w-md mx-auto p-8 shadow-2xl space-y-4 rounded-md"
       onSubmit={handleFormSubmission}
     >
       <div>
