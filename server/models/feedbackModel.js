@@ -12,7 +12,6 @@ const feedbackSchema = new mongoose.Schema(
     email: {
       type: String,
       required: [true, "email is a required field"],
-      unique: true,
       lowercase: true,
       trim: true,
       validate: [validator.isEmail, "Please provide a valid email."],
